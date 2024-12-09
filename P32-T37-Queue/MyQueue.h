@@ -49,8 +49,17 @@ namespace myQueue {
 			}
 		}//реалізація
 		void pop_front() { 
-
-
+			if (!isEmpty()) {
+				if (head != current) {
+					head = head->next;
+					delete head->prev;
+					head->prev = nullptr;
+				}
+				else {
+					delete head;
+					head = current = nullptr;
+				}
+			}
 		}//реалізація
 
 		void show()const { ... }//реалізація
