@@ -28,14 +28,16 @@ namespace myQueue {
 			head = current = nullptr;
 		}
 		~Queue() { 
+			while (!isEmpty()) pop_front();
+		} 
 
-		}//реалізація
+		bool isEmpty()const { return head == nullptr; }
 
-		bool isEmpty()const { return head == nullptr; }//реалізація
 		U first()const { 
 			if (isEmpty()) throw "MyQueue is empty!";
+
 			return head->info;
-		}//реалізація
+		} 
 
 		void push_back(U value) { 
 			Node<U>* el = new Node<U>(value);
