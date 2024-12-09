@@ -47,7 +47,8 @@ namespace myQueue {
 
 				current = el;
 			}
-		}//реалізація
+		}
+
 		void pop_front() { 
 			if (!isEmpty()) {
 				if (head != current) {
@@ -60,8 +61,18 @@ namespace myQueue {
 					head = current = nullptr;
 				}
 			}
-		}//реалізація
+		}
 
-		void show()const { ... }//реалізація
+		void show()const { 
+			if (isEmpty()) cout << "MyQueue is empty!\n\n";
+			else {
+				Node<U>* p = head;
+				while (p != nullptr) {
+					cout << p->info << " ";
+					p = p->next;
+				}
+				cout << endl;
+			}
+		}
 	};
 }
